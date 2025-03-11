@@ -61,7 +61,7 @@ class _TabungPageState extends State<TabungPage> {
               keyboardType: TextInputType.number,
               decoration: InputDecoration(
                   border: OutlineInputBorder(),
-                  labelText: 'Masukkan Sisi Tabung'),
+                  labelText: 'Masukkan Jari jari Tabung'),
             ),
             SizedBox(height: 16),
             TextField(
@@ -69,7 +69,7 @@ class _TabungPageState extends State<TabungPage> {
               keyboardType: TextInputType.number,
               decoration: InputDecoration(
                   border: OutlineInputBorder(),
-                  labelText: 'Masukkan Sisi Tabung'),
+                  labelText: 'Masukkan Tinggi Tabung'),
             ),
             SizedBox(height: 16),
             ButtonCek(callback: () => hitung(), text: "Hitung Rumus"),
