@@ -6,14 +6,14 @@
 
 Aplikasi ini dibuat untuk memenuhi tugas quiz dengan spesifikasi sebagai berikut:
 
-- **Menu Trapesium** – Menghitung luas dan keliling trapesium
-- **Menu Kubus** – Menghitung volume dan keliling kubus
+- **Menu Layang-layang** – Menghitung luas dan keliling Layang-layang
+- **Menu Tabung** – Menghitung volume dan keliling Tabung
 - **Menu Penghitung Hari** – Menampilkan hari dalam seminggu (1-7)
 - **Menu Data Diri** – Berisi informasi pribadi (NIM, Nama, Kelas, Hobby, dan Foto)
 
 ## 📸 Tampilan Soal
 
-![Soal Quiz](soal/Soal%20Kuis.jpeg)
+![Soal Quiz](soal/Soal%20Quiz.png)
 
 ## 📄 Laporan
 

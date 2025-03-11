@@ -1,25 +1,29 @@
 import 'package:flutter/material.dart';
+import 'dart:math';
 import '../all/import.dart';
 
-class KubusPage extends StatefulWidget {
-  const KubusPage({super.key});
+class TabungPage extends StatefulWidget {
+  const TabungPage({super.key});
 
   @override
-  State<KubusPage> createState() => _KubusPageState();
+  State<TabungPage> createState() => _TabungPageState();
 }
 
-class _KubusPageState extends State<KubusPage> {
-  final TextEditingController _inputSisi = TextEditingController();
+class _TabungPageState extends State<TabungPage> {
+  final TextEditingController _inputJariJari = TextEditingController();
+  final TextEditingController _inputTinggi = TextEditingController();
 
   String volume = "Hasil Volume";
   String keliling = "Hasil Keliling";
 
   void hitung() {
-    if (double.tryParse(_inputSisi.text) != null) {
-      double sisi = double.parse(_inputSisi.text);
+    if (double.tryParse(_inputJariJari.text) != null &&
+        double.tryParse(_inputTinggi.text) != null) {
+      double jariJari = double.parse(_inputJariJari.text);
+      double tinggi = double.parse(_inputTinggi.text);
       setState(() {
-        volume = (sisi * sisi * sisi).toStringAsFixed(2);
-        keliling = (sisi * 12).toStringAsFixed(2);
+        volume = (pi * pow(jariJari, 2) * tinggi).toStringAsFixed(2);
+        keliling = (2 * pi * jariJari).toStringAsFixed(2);
       });
     } else {
       setState(() {
@@ -35,7 +39,7 @@ class _KubusPageState extends State<KubusPage> {
       appBar: AppBar(
         backgroundColor: Colors.blueAccent,
         title: Text(
-          "Kubus Page",
+          "Tabung Page",
           style: TextStyle(color: Colors.white),
         ),
       ),
@@ -45,29 +49,37 @@ class _KubusPageState extends State<KubusPage> {
         child: Column(
           children: [
             Text(
-              'Kubus',
+              'Tabung',
               style: TextStyle(fontSize: 18),
             ),
             Text(
-              'Menghitung Volume dan Keliling Kubus',
+              'Menghitung Volume dan Keliling Tabung',
             ),
             SizedBox(height: 20),
             TextField(
-              controller: _inputSisi,
+              controller: _inputJariJari,
               keyboardType: TextInputType.number,
               decoration: InputDecoration(
                   border: OutlineInputBorder(),
-                  labelText: 'Masukkan Sisi Kubus'),
+                  labelText: 'Masukkan Sisi Tabung'),
+            ),
+            SizedBox(height: 16),
+            TextField(
+              controller: _inputTinggi,
+              keyboardType: TextInputType.number,
+              decoration: InputDecoration(
+                  border: OutlineInputBorder(),
+                  labelText: 'Masukkan Sisi Tabung'),
             ),
             SizedBox(height: 16),
             ButtonCek(callback: () => hitung(), text: "Hitung Rumus"),
             SizedBox(height: 16),
             Text(
-              "Volume Kubus : $volume",
+              "Volume Tabung : $volume",
               style: TextStyle(fontSize: 18),
             ),
             Text(
-              "Keliling Kubus : $keliling",
+              "Keliling Tabung : $keliling",
               style: TextStyle(fontSize: 18),
             ),
           ],
